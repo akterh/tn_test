@@ -1,0 +1,59 @@
+name: tn_test
+description: tn_test” --org com.tn.test”
+version: 1.0.1+1
+publish_to: none
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+  flutter: 3.7.11
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: ^5.8.0+1
+  dartz: ^0.10.1
+  internet_connection_checker_plus: ^2.7.1
+  flutter_easyloading: ^3.0.5
+  get_it: ^8.0.3
+  injectable: ^2.5.0
+  flutter_bloc: ^9.1.0
+  bloc: ^9.0.0
+  equatable: ^2.0.7
+  flutter_svg: ^2.0.17
+  flutter_screenutil: ^5.9.3
+  shared_preferences: ^2.5.3
+  easy_localization: ^3.0.7+1
+  another_flushbar: ^1.12.30
+  pretty_dio_logger: ^1.4.0
+  google_maps_flutter:
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  injectable_generator:
+  build_runner:
+dependency_overrides:
+  modal_bottom_sheet:
+    git:
+      url: https://github.com/followthemoney1/modal_bottom_sheet.git
+      ref: main
+      path: modal_bottom_sheet
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/icons/
+    - assets/translations/
+
+
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+
