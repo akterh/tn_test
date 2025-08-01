@@ -26,6 +26,8 @@ dependencies:
   another_flushbar: ^1.12.30
   pretty_dio_logger: ^1.4.0
   google_maps_flutter:
+  flutter_polyline_points: ^2.0.0
+  http: ^1.4.0
 
 
 
