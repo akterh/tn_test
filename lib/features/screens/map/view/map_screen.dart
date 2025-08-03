@@ -1,46 +1,30 @@
-import 'dart:async';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:tn_test/core/constants/app_strings.dart';
 
 import '../cubit/map_cubit.dart';
 import '../cubit/map_state.dart';
-import '../../../../core/constants/secret.dart';
-import '../repository/map_repository.dart';
 
-class MapScreen extends StatelessWidget {
-  const MapScreen({super.key});
+class MapViewScreen extends StatefulWidget {
+  const MapViewScreen({super.key});
 
+  @override
+  State<MapViewScreen> createState() => _MapViewScreenState();
+}
+
+class _MapViewScreenState extends State<MapViewScreen> {
   static const LatLng _center = LatLng(23.8103, 90.4125);
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => MapCubit(MapRepository(apiKey: googleApiKey)),
-      child: const MapView(),
-    );
-  }
-}
-
-class MapView extends StatefulWidget {
-  const MapView({super.key});
-
-  @override
-  State<MapView> createState() => _MapViewState();
-}
-
-class _MapViewState extends State<MapView> {
-  final Completer<GoogleMapController> _controller = Completer();
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Shortest Route Finder")),
+      appBar: AppBar(title: Text(AppStrings.shortestRoute.tr())),
       body: BlocBuilder<MapCubit, MapState>(
         builder: (context, state) {
           final markers = <Marker>{};
-          final polylines = <Polyline>{};
+          final polyLines = <Polyline>{};
 
           if (state.startPoint != null) {
             markers.add(Marker(
@@ -62,10 +46,10 @@ class _MapViewState extends State<MapView> {
             ));
           }
 
-          if (state.routePoints.isNotEmpty) {
-            polylines.add(Polyline(
+          if ((state.routePoints ?? []).isNotEmpty) {
+            polyLines.add(Polyline(
               polylineId: const PolylineId("route"),
-              points: state.routePoints,
+              points: state.routePoints ?? [],
               color: Colors.blue,
               width: 5,
             ));
@@ -73,10 +57,12 @@ class _MapViewState extends State<MapView> {
 
           return GoogleMap(
             initialCameraPosition:
-                const CameraPosition(target: MapScreen._center, zoom: 12),
-            onMapCreated: (controller) => _controller.complete(controller),
+                const CameraPosition(target: _center, zoom: 12),
+            onMapCreated: (controller) {
+              context.read<MapCubit>().mapController = controller;
+            },
             markers: markers,
-            polylines: polylines,
+            polylines: polyLines,
             onTap: (point) {
               final cubit = context.read<MapCubit>();
               if (state.startPoint == null) {

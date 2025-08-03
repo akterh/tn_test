@@ -23,30 +23,7 @@ extension StringFormatter on String {
   }
 }
 
-extension AgeFromStringExtension on String {
-  String get ageInYearsAndMonths {
-    try {
-      final birthDate = DateTime.parse(this);
-      final now = DateTime.now();
 
-      int years = now.year - birthDate.year;
-      int months = now.month - birthDate.month;
-
-      if (now.day < birthDate.day) {
-        months--;
-      }
-
-      if (months < 0) {
-        years--;
-        months += 12;
-      }
-
-      return '$years ${AppStrings.years.tr()} $months ${AppStrings.month.tr()}';
-    } catch (e) {
-      return 'Invalid date';
-    }
-  }
-}
 
 extension StringDateExtensions on String {
   bool is48HoursBeforeNow() {

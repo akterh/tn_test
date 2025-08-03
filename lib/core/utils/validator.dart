@@ -134,31 +134,5 @@ class Validator {
   }
 
 
-  static String? password(String? v) {
-    if (v == null || v == '') {
-      return AppStrings.signInPasswordRequiredErr.tr();
-    }
 
-    if (v.length > 20) return AppStrings.signInPasswordMaxErr.tr();
-
-    if (v.length < 6) return AppStrings.signInPasswordMinErr.tr();
-
-    if (!v.contains(RegExp(r'[A-Z]'))) {
-      return AppStrings.signInPasswordUppercaseCharErr.tr();
-    }
-
-    if (!v.contains(RegExp(r'[a-z]'))) {
-      return AppStrings.signInPasswordLowercaseCharErr.tr();
-    }
-
-    if (!v.contains(RegExp(r'[0-1]'))) {
-      return AppStrings.signInPasswordNumberCharErr.tr();
-    }
-
-    if (!v.contains(RegExp(r'[~!@#$%^&*()_+`{}|<>?;:.,=[\]\\/\-]'))) {
-      return AppStrings.signInPasswordSpecialCharErr.tr();
-    }
-
-    return null;
-  }
 }

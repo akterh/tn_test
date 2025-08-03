@@ -30,7 +30,7 @@ class RouteGenerator {
         );
       case Routes.map:
         return CupertinoPageRoute(
-          builder: (_) => const MapScreen(),
+          builder: (_) => const MapViewScreen(),
           settings: routeSettings,
         );
       default:

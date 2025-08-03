@@ -2,9 +2,9 @@ import 'package:tn_test/core/app/app_flavor.dart';
 
 class ApiUrls {
   static String baseUrl = getServerUrl();
-  static const String liveUrl = 'https://fakestoreapi.com/'; //live server
-  static const String devUrl = 'https://fakestoreapi.com/'; // dev server
-  static const String testUrl = 'https://fakestoreapi.com/'; // test server
+  static const String liveUrl = 'https://maps.googleapis.com/'; //live server
+  static const String devUrl = 'https://maps.googleapis.com/'; // dev server
+  static const String testUrl = 'https://maps.googleapis.com/'; // test server
 
   // get current flavor url
   static String getServerUrl() {
@@ -20,5 +20,5 @@ class ApiUrls {
   }
 
   // shop module
-  static const String products = 'products';
+  static const String directionUrl = 'maps/api/directions/json?';
 }

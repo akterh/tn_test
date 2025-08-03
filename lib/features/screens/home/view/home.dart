@@ -10,13 +10,13 @@ class HomeScreen extends StatelessWidget {
     return Center(
       child: TextButton(
         onPressed: () {
-          GetContext.to(MapScreen());
+          GetContext.to(MapViewScreen());
         },
-        child: Text("Explore Map"),
         style: OutlinedButton.styleFrom(
           backgroundColor:
               Colors.blue.withOpacity(.5), // Optional for OutlinedButton
         ),
+        child: Text("Explore Map"),
       ),
     );
   }
