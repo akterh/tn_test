@@ -43,8 +43,7 @@ class MapCubit extends Cubit<MapState> {
           return aDistance.compareTo(bDistance);
         });
 
-        final decodedPoints = PolylinePoints()
-            .decodePolyline(data.routes?.first.overviewPolyline?.points ?? "");
+        final decodedPoints = PolylinePoints.decodePolyline(data.routes?.first.overviewPolyline?.points ?? "");
 
         final routePoints =
             decodedPoints.map((p) => LatLng(p.latitude, p.longitude)).toList();

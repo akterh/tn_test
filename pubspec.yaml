@@ -12,21 +12,21 @@ dependencies:
     sdk: flutter
   dio: ^5.8.0+1
   dartz: ^0.10.1
-  internet_connection_checker_plus: ^2.7.1
+  internet_connection_checker_plus: ^2.7.2
   flutter_easyloading: ^3.0.5
-  get_it: ^8.0.3
-  injectable: ^2.5.0
-  flutter_bloc: ^9.1.0
+  get_it: ^8.2.0
+  injectable: ^2.5.1
+  flutter_bloc: ^9.1.1
   bloc: ^9.0.0
   equatable: ^2.0.7
-  flutter_svg: ^2.0.17
+  flutter_svg: ^2.2.0
   flutter_screenutil: ^5.9.3
   shared_preferences: ^2.5.3
-  easy_localization: ^3.0.7+1
+  easy_localization: ^3.0.8
   another_flushbar: ^1.12.30
   pretty_dio_logger: ^1.4.0
   google_maps_flutter:
-  flutter_polyline_points: ^2.0.0
+  flutter_polyline_points: ^3.0.1
   http: ^1.4.0
   flutter_dotenv: ^5.2.1
 
