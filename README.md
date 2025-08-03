@@ -36,6 +36,9 @@ $ flutter build appbundle --flavor production --target lib/main_production.dart
 $flutter pub run build_runner build
 _\*Flutter Starter works on iOS, Android, Web, and Windows._
 
+## Feature description.
+User can select two random points on map and he will see the route , if he click third time then point picker will be removed . Then he can repeat this flow again
+
 
 
 
