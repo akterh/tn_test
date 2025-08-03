@@ -1,6 +1,6 @@
 
 
-Flutter Starter” --org com.ecom.axilweb”
+Flutter Starter” --org com.tn.test”
 
 ---
 
@@ -32,7 +32,8 @@ $ flutter build apk --flavor production --target lib/main_production.dart
 $ flutter build appbundle --flavor production --target lib/main_production.dart
 
 ```
-
+# Build Runner
+$flutter pub run build_runner build
 _\*Flutter Starter works on iOS, Android, Web, and Windows._
 
 
