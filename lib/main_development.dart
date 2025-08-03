@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:tn_test/features/components/custom_progress_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,6 +24,7 @@ void main() async {
   AppFlavor.appFlavor = FlavorStatus.development;
   //Init my app with observer
   Bloc.observer = AppBlocObserver();
+  await dotenv.load();
   runApp(
     EasyLocalization(
       supportedLocales: const [

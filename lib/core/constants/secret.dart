@@ -1,1 +1,3 @@
-const String googleApiKey = "AIzaSyBfgpQBcimzeQH4IqENS7anDpOpa_MtdIA";
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+String? googleApiKey = dotenv.env['API_KEY'];

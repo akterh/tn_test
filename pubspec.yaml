@@ -28,6 +28,7 @@ dependencies:
   google_maps_flutter:
   flutter_polyline_points: ^2.0.0
   http: ^1.4.0
+  flutter_dotenv: ^5.2.1
 
 
 
@@ -53,6 +54,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/translations/
+    - .env
 
 
 
